@@ -1,0 +1,30 @@
+# Barzakh: Star Gardener
+
+> Official website for Barzakh: Star Gardener, an atmospheric puzzle adventure game by Han Interactive Entertainment.
+
+Barzakh: Star Gardener is a PC game developed by Emirhan Güngörmez under Han Interactive Entertainment. The game is inspired by Sufi mysticism and The Little Prince, and follows a traveler named Emir through a metaphysical journey of finding hidden stars across time, space, and inner landscapes.
+
+## Key Facts
+
+- Title: Barzakh: Star Gardener
+- Short name: Barzakh
+- Developer: Emirhan Güngörmez
+- Studio: Han Interactive Entertainment
+- Genre: atmospheric puzzle adventure, indie game
+- Engine: Unreal Engine 5
+- Platform: PC, Steam
+- Planned release: Q1 2027
+- Steam: https://store.steampowered.com/app/3849950/Barzakh_Star_Gardener/
+- Website: https://barzakh.emirhangungormez.com.tr/
+- Press/business contact: han23studio@gmail.com
+
+## Pages
+
+- Turkish homepage: https://barzakh.emirhangungormez.com.tr/
+- English homepage: https://barzakh.emirhangungormez.com.tr/en.html
+- Turkish copyright/privacy page: https://barzakh.emirhangungormez.com.tr/privacy.html
+- English copyright/privacy page: https://barzakh.emirhangungormez.com.tr/privacy-en.html
+
+## Suggested Summary
+
+Barzakh: Star Gardener is an atmospheric Unreal Engine 5 puzzle game about searching for hidden stars across different times and dimensions. Inspired by Sufi mysticism and The Little Prince, it presents a poetic, metaphysical journey through the inner world of a stranded traveler.
