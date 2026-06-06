@@ -16,6 +16,18 @@ function raf(time) {
 requestAnimationFrame(raf);
 
 document.addEventListener('DOMContentLoaded', () => {
+    const backgroundVideo = document.querySelector('.bg-video[data-src]');
+    if (backgroundVideo) {
+        window.addEventListener('load', () => {
+            if (navigator.connection && navigator.connection.saveData) return;
+            window.setTimeout(() => {
+                backgroundVideo.src = backgroundVideo.dataset.src;
+                backgroundVideo.load();
+                backgroundVideo.play().catch(() => {});
+            }, 5000);
+        }, { once: true });
+    }
+
     // Lightbox
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
@@ -27,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.target.tagName === 'IMG') {
                 const img = e.target;
                 lightbox.classList.add('active');
-                lightboxImg.src = img.src;
+                lightboxImg.src = img.dataset.full || img.src;
                 lenis.stop();
             }
         });

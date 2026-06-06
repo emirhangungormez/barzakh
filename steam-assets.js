@@ -1,10 +1,8 @@
 /**
  * Barzakh: Star Gardener - Steam Asset Sync
- * Fetches dynamic content from Steam Store API to keep the site updated.
- * Security: Input sanitization and URL validation included.
+ * Fetches dynamic screenshot thumbnails from Steam and keeps full-size images for the lightbox.
  */
 
-// Sanitize string to prevent XSS
 function sanitizeString(str) {
     if (typeof str !== 'string') return '';
     const div = document.createElement('div');
@@ -12,7 +10,6 @@ function sanitizeString(str) {
     return div.innerHTML;
 }
 
-// Validate Steam CDN URL
 function isValidSteamUrl(url) {
     if (typeof url !== 'string') return false;
     try {
@@ -41,20 +38,16 @@ async function updateSteamAssets() {
         const data = await response.json();
 
         if (!data[APP_ID] || !data[APP_ID].success) {
-            console.error('Steam API error:', data);
             return;
         }
 
         const appDetails = data[APP_ID].data;
 
-        // Update Screenshots Gallery with sanitization
         if (appDetails.screenshots && Array.isArray(appDetails.screenshots)) {
             updateGallery(appDetails.screenshots);
         }
-
-        console.log('Steam screenshots updated successfully!');
-    } catch (error) {
-        console.error('Failed to fetch Steam assets:', error);
+    } catch {
+        // Static hosts do not execute fetch_steam.php; keep the hardcoded gallery fallback.
     }
 }
 
@@ -62,20 +55,24 @@ function updateGallery(screenshots) {
     const gallery = document.querySelector('.photo-gallery');
     if (!gallery || !screenshots) return;
 
-    // Clear existing content safely
     gallery.textContent = '';
 
     screenshots.forEach((ss, index) => {
-        // Validate URL before using
-        if (!isValidSteamUrl(ss.path_full)) {
-            console.warn(`Invalid screenshot URL skipped: ${ss.path_full}`);
+        const fullImage = ss.path_full;
+        const thumbnailImage = ss.path_thumbnail || ss.path_full;
+
+        if (!isValidSteamUrl(fullImage) || !isValidSteamUrl(thumbnailImage)) {
             return;
         }
 
         const img = document.createElement('img');
-        img.src = ss.path_full;
-        img.alt = `Barzakh Ekran Görüntüsü ${index + 1}`;
+        img.src = thumbnailImage;
+        img.dataset.full = fullImage;
+        img.alt = `Barzakh Screenshot ${index + 1}`;
+        img.width = 600;
+        img.height = 338;
         img.loading = 'lazy';
+        img.decoding = 'async';
         img.dataset.id = sanitizeString(String(ss.id));
 
         gallery.appendChild(img);
@@ -84,8 +81,6 @@ function updateGallery(screenshots) {
     document.dispatchEvent(new Event('steamAssetsLoaded'));
 }
 
-// Run on load
 document.addEventListener('DOMContentLoaded', () => {
     updateSteamAssets();
 });
-

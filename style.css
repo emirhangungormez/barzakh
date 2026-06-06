@@ -3,6 +3,7 @@
     src: url('fonts/Suisse_Intl_Book.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 /* Base Styles */
@@ -264,6 +265,10 @@ body {
     cursor: pointer;
     animation: bounce 2s infinite;
     padding: 20px 0;
+    background: none;
+    border: 0;
+    color: inherit;
+    width: 100%;
 }
 
 .scroll-down svg {
@@ -675,6 +680,7 @@ body {
 .photo-gallery img {
     width: 500px;
     height: 280px;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
     border-radius: 4px;
     filter: brightness(0.6);
@@ -959,6 +965,17 @@ body {
         height: 40px;
         opacity: 1;
         /* Always visible on touch */
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.001ms !important;
     }
 }
 
