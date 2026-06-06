@@ -22,8 +22,6 @@
     <meta name="googlebot" content="index, follow">
     <link rel="preconnect" href="https://shared.akamai.steamstatic.com" crossorigin>
     <link rel="preconnect" href="https://store.steampowered.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="canonical" href="https://barzakh.emirhangungormez.com.tr/en.html">
 
     <!-- Hreflang for Language Versions -->
@@ -70,6 +68,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="favicon.ico">
 
+    <link rel="preload" as="image" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/capsule_616x353.jpg" fetchpriority="high">
     <link rel="stylesheet" href="style.min.css?v=1.2">
 
     <!-- JSON-LD Structured Data for Google -->
@@ -165,9 +164,6 @@
     </script>
 
     <!-- GSAP & Lenis -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/lenis@latest/dist/lenis.min.js" defer></script>
 </head>
 
 <body>
@@ -198,8 +194,8 @@
             <div class="central-content">
                 <div class="video-frame container-narrow">
                     <div class="custom-video-player" id="mainPlayer">
-                        <video autoplay loop muted playsinline preload="metadata" class="main-video">
-                            <source src="video/gameplay.mp4?v=1.1" type="video/mp4">
+                        <video loop muted playsinline preload="none" poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/capsule_616x353.jpg" class="main-video">
+                            <source data-src="video/gameplay.mp4?v=1.1" type="video/mp4">
                             <track kind="captions" src="captions/gameplay-en.vtt" srclang="en" label="English">
                             Your browser does not support the video tag.
                         </video>
@@ -228,12 +224,12 @@
 
                 <!-- Steam Store Widget -->
                 <div class="steam-official-widget">
-                    <iframe src="https://store.steampowered.com/widget/3849950/" title="Barzakh: Star Gardener Steam store widget" loading="lazy" frameborder="0" width="646"
-                        height="190"></iframe>
+                    <iframe data-src="https://store.steampowered.com/widget/3849950/" title="Barzakh: Star Gardener Steam store widget" loading="lazy" frameborder="0" width="646" height="190"></iframe>
+                    <a class="steam-widget-placeholder" href="https://store.steampowered.com/app/3849950/Barzakh_Star_Gardener/" target="_blank" rel="noopener noreferrer">Wishlist on Steam</a>
                 </div>
             </div>
 
-            <button class="scroll-down" type="button" aria-label="Scroll to game details" onclick="lenis.scrollTo('#about-section')">
+            <button class="scroll-down" type="button" aria-label="Scroll to game details" onclick="scrollToSection('#about-section')">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M7 10L12 15L17 10" stroke="white" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
@@ -329,7 +325,7 @@
                             <span class="news-tag">Radio Interview</span>
                             <div class="news-header">
                                 <img src="https://www1.wdr.de/resources/img/wdr/logo/wdr_logo.svg" alt="WDR Logo"
-                                    class="news-brand-logo" width="120" height="68" loading="lazy" decoding="async">
+                                    class="news-brand-logo" width="120" height="68" loading="lazy" decoding="async" fetchpriority="low">
                                 <h3>WDR: "Pixel voller Vorurteile? Wie Games den Islam zeichnen"</h3>
                             </div>
                             <p>In this special feature by WDR, one of Germany's largest broadcasters, an interview was
@@ -357,7 +353,7 @@
                 <div class="video-grid">
                     <a href="https://www.youtube.com/watch?v=dhsVbxH0BX4&t" target="_blank" class="video-card">
                         <div class="devlog-thumbnail">
-                            <img src="https://img.youtube.com/vi/dhsVbxH0BX4/maxresdefault.jpg" alt="Barzakh Devlog" width="1280" height="720" loading="lazy" decoding="async">
+                            <img src="https://img.youtube.com/vi/dhsVbxH0BX4/maxresdefault.jpg" alt="Barzakh Devlog" width="1280" height="720" loading="lazy" decoding="async" fetchpriority="low">
                             <div class="play-overlay">
                                 <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32">
                                     <path d="M8 5v14l11-7z" />
@@ -373,21 +369,21 @@
         <!-- Gallery Section -->
         <section id="gallery-section" class="gallery-section-new">
             <div class="photo-gallery">
-                <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/1ad38ac4e50da80ff5eefc482cd856a1ffb41e84/ss_1ad38ac4e50da80ff5eefc482cd856a1ffb41e84.600x338.jpg" data-full="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/1ad38ac4e50da80ff5eefc482cd856a1ffb41e84/ss_1ad38ac4e50da80ff5eefc482cd856a1ffb41e84.1920x1080.jpg" alt="Barzakh Screenshot 1" width="600" height="338" loading="lazy" decoding="async">
-                <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/76e8b17ea33e984e2f0d27e01e3b40aaf64c4efa/ss_76e8b17ea33e984e2f0d27e01e3b40aaf64c4efa.600x338.jpg" data-full="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/76e8b17ea33e984e2f0d27e01e3b40aaf64c4efa/ss_76e8b17ea33e984e2f0d27e01e3b40aaf64c4efa.1920x1080.jpg" alt="Barzakh Screenshot 2" width="600" height="338" loading="lazy" decoding="async">
-                <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/e5718e46983fd5fa14628e8bccc7e39004843169/ss_e5718e46983fd5fa14628e8bccc7e39004843169.600x338.jpg" data-full="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/e5718e46983fd5fa14628e8bccc7e39004843169/ss_e5718e46983fd5fa14628e8bccc7e39004843169.1920x1080.jpg" alt="Barzakh Screenshot 3" width="600" height="338" loading="lazy" decoding="async">
-                <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/b17c181b199a2d01db129ea48da59e91502fdbe8/ss_b17c181b199a2d01db129ea48da59e91502fdbe8.600x338.jpg" data-full="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/b17c181b199a2d01db129ea48da59e91502fdbe8/ss_b17c181b199a2d01db129ea48da59e91502fdbe8.1920x1080.jpg" alt="Barzakh Screenshot 4" width="600" height="338" loading="lazy" decoding="async">
-                <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/a26e5159331029d1a8d2bb8bc5fcf0c1f23ad7a1/ss_a26e5159331029d1a8d2bb8bc5fcf0c1f23ad7a1.600x338.jpg" data-full="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/a26e5159331029d1a8d2bb8bc5fcf0c1f23ad7a1/ss_a26e5159331029d1a8d2bb8bc5fcf0c1f23ad7a1.1920x1080.jpg" alt="Barzakh Screenshot 5" width="600" height="338" loading="lazy" decoding="async">
-                <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/1ff861a715651967d7e391915cbc1de0d195ba75/ss_1ff861a715651967d7e391915cbc1de0d195ba75.600x338.jpg" data-full="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/1ff861a715651967d7e391915cbc1de0d195ba75/ss_1ff861a715651967d7e391915cbc1de0d195ba75.1920x1080.jpg" alt="Barzakh Screenshot 6" width="600" height="338" loading="lazy" decoding="async">
-                <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/94064a2cdcc64b4563f165d4ca4869a1d706505b/ss_94064a2cdcc64b4563f165d4ca4869a1d706505b.600x338.jpg" data-full="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/94064a2cdcc64b4563f165d4ca4869a1d706505b/ss_94064a2cdcc64b4563f165d4ca4869a1d706505b.1920x1080.jpg" alt="Barzakh Screenshot 7" width="600" height="338" loading="lazy" decoding="async">
-                <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/77a9373d5f2ef2e32f333ce68f8c548a8d2ceefb/ss_77a9373d5f2ef2e32f333ce68f8c548a8d2ceefb.600x338.jpg" data-full="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/77a9373d5f2ef2e32f333ce68f8c548a8d2ceefb/ss_77a9373d5f2ef2e32f333ce68f8c548a8d2ceefb.1920x1080.jpg" alt="Barzakh Screenshot 8" width="600" height="338" loading="lazy" decoding="async">
-                <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/d4722b24b46daf1932335abec9997f668c63980b/ss_d4722b24b46daf1932335abec9997f668c63980b.600x338.jpg" data-full="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/d4722b24b46daf1932335abec9997f668c63980b/ss_d4722b24b46daf1932335abec9997f668c63980b.1920x1080.jpg" alt="Barzakh Screenshot 9" width="600" height="338" loading="lazy" decoding="async">
-                <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/629c227f7720cbbcd5533c2539f3c21e6bac807c/ss_629c227f7720cbbcd5533c2539f3c21e6bac807c.600x338.jpg" data-full="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/629c227f7720cbbcd5533c2539f3c21e6bac807c/ss_629c227f7720cbbcd5533c2539f3c21e6bac807c.1920x1080.jpg" alt="Barzakh Screenshot 10" width="600" height="338" loading="lazy" decoding="async">
-                <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/c5fd383488ebcd3116d070364042dbc096ce756b/ss_c5fd383488ebcd3116d070364042dbc096ce756b.600x338.jpg" data-full="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/c5fd383488ebcd3116d070364042dbc096ce756b/ss_c5fd383488ebcd3116d070364042dbc096ce756b.1920x1080.jpg" alt="Barzakh Screenshot 11" width="600" height="338" loading="lazy" decoding="async">
-                <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/f9c466d2a9928fa761d43a1d29dc4a2372423cc9/ss_f9c466d2a9928fa761d43a1d29dc4a2372423cc9.600x338.jpg" data-full="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/f9c466d2a9928fa761d43a1d29dc4a2372423cc9/ss_f9c466d2a9928fa761d43a1d29dc4a2372423cc9.1920x1080.jpg" alt="Barzakh Screenshot 12" width="600" height="338" loading="lazy" decoding="async">
-                <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/69e80b5915e22aabd02376717e2d76ce362189e5/ss_69e80b5915e22aabd02376717e2d76ce362189e5.600x338.jpg" data-full="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/69e80b5915e22aabd02376717e2d76ce362189e5/ss_69e80b5915e22aabd02376717e2d76ce362189e5.1920x1080.jpg" alt="Barzakh Screenshot 13" width="600" height="338" loading="lazy" decoding="async">
-                <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/1c65e294a5dd6db7e7cf3d94a93ac1bc3e42e994/ss_1c65e294a5dd6db7e7cf3d94a93ac1bc3e42e994.600x338.jpg" data-full="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/1c65e294a5dd6db7e7cf3d94a93ac1bc3e42e994/ss_1c65e294a5dd6db7e7cf3d94a93ac1bc3e42e994.1920x1080.jpg" alt="Barzakh Screenshot 14" width="600" height="338" loading="lazy" decoding="async">
-                <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/84d7ccac61e94e829cbf9aab7d00a71c84e19be2/ss_84d7ccac61e94e829cbf9aab7d00a71c84e19be2.600x338.jpg" data-full="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/84d7ccac61e94e829cbf9aab7d00a71c84e19be2/ss_84d7ccac61e94e829cbf9aab7d00a71c84e19be2.1920x1080.jpg" alt="Barzakh Screenshot 15" width="600" height="338" loading="lazy" decoding="async">
+                <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/1ad38ac4e50da80ff5eefc482cd856a1ffb41e84/ss_1ad38ac4e50da80ff5eefc482cd856a1ffb41e84.600x338.jpg" data-full="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/1ad38ac4e50da80ff5eefc482cd856a1ffb41e84/ss_1ad38ac4e50da80ff5eefc482cd856a1ffb41e84.1920x1080.jpg" alt="Barzakh Screenshot 1" width="600" height="338" loading="lazy" decoding="async" fetchpriority="low">
+                <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/76e8b17ea33e984e2f0d27e01e3b40aaf64c4efa/ss_76e8b17ea33e984e2f0d27e01e3b40aaf64c4efa.600x338.jpg" data-full="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/76e8b17ea33e984e2f0d27e01e3b40aaf64c4efa/ss_76e8b17ea33e984e2f0d27e01e3b40aaf64c4efa.1920x1080.jpg" alt="Barzakh Screenshot 2" width="600" height="338" loading="lazy" decoding="async" fetchpriority="low">
+                <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/e5718e46983fd5fa14628e8bccc7e39004843169/ss_e5718e46983fd5fa14628e8bccc7e39004843169.600x338.jpg" data-full="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/e5718e46983fd5fa14628e8bccc7e39004843169/ss_e5718e46983fd5fa14628e8bccc7e39004843169.1920x1080.jpg" alt="Barzakh Screenshot 3" width="600" height="338" loading="lazy" decoding="async" fetchpriority="low">
+                <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/b17c181b199a2d01db129ea48da59e91502fdbe8/ss_b17c181b199a2d01db129ea48da59e91502fdbe8.600x338.jpg" data-full="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/b17c181b199a2d01db129ea48da59e91502fdbe8/ss_b17c181b199a2d01db129ea48da59e91502fdbe8.1920x1080.jpg" alt="Barzakh Screenshot 4" width="600" height="338" loading="lazy" decoding="async" fetchpriority="low">
+                <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/a26e5159331029d1a8d2bb8bc5fcf0c1f23ad7a1/ss_a26e5159331029d1a8d2bb8bc5fcf0c1f23ad7a1.600x338.jpg" data-full="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/a26e5159331029d1a8d2bb8bc5fcf0c1f23ad7a1/ss_a26e5159331029d1a8d2bb8bc5fcf0c1f23ad7a1.1920x1080.jpg" alt="Barzakh Screenshot 5" width="600" height="338" loading="lazy" decoding="async" fetchpriority="low">
+                <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/1ff861a715651967d7e391915cbc1de0d195ba75/ss_1ff861a715651967d7e391915cbc1de0d195ba75.600x338.jpg" data-full="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/1ff861a715651967d7e391915cbc1de0d195ba75/ss_1ff861a715651967d7e391915cbc1de0d195ba75.1920x1080.jpg" alt="Barzakh Screenshot 6" width="600" height="338" loading="lazy" decoding="async" fetchpriority="low">
+                <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/94064a2cdcc64b4563f165d4ca4869a1d706505b/ss_94064a2cdcc64b4563f165d4ca4869a1d706505b.600x338.jpg" data-full="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/94064a2cdcc64b4563f165d4ca4869a1d706505b/ss_94064a2cdcc64b4563f165d4ca4869a1d706505b.1920x1080.jpg" alt="Barzakh Screenshot 7" width="600" height="338" loading="lazy" decoding="async" fetchpriority="low">
+                <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/77a9373d5f2ef2e32f333ce68f8c548a8d2ceefb/ss_77a9373d5f2ef2e32f333ce68f8c548a8d2ceefb.600x338.jpg" data-full="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/77a9373d5f2ef2e32f333ce68f8c548a8d2ceefb/ss_77a9373d5f2ef2e32f333ce68f8c548a8d2ceefb.1920x1080.jpg" alt="Barzakh Screenshot 8" width="600" height="338" loading="lazy" decoding="async" fetchpriority="low">
+                <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/d4722b24b46daf1932335abec9997f668c63980b/ss_d4722b24b46daf1932335abec9997f668c63980b.600x338.jpg" data-full="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/d4722b24b46daf1932335abec9997f668c63980b/ss_d4722b24b46daf1932335abec9997f668c63980b.1920x1080.jpg" alt="Barzakh Screenshot 9" width="600" height="338" loading="lazy" decoding="async" fetchpriority="low">
+                <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/629c227f7720cbbcd5533c2539f3c21e6bac807c/ss_629c227f7720cbbcd5533c2539f3c21e6bac807c.600x338.jpg" data-full="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/629c227f7720cbbcd5533c2539f3c21e6bac807c/ss_629c227f7720cbbcd5533c2539f3c21e6bac807c.1920x1080.jpg" alt="Barzakh Screenshot 10" width="600" height="338" loading="lazy" decoding="async" fetchpriority="low">
+                <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/c5fd383488ebcd3116d070364042dbc096ce756b/ss_c5fd383488ebcd3116d070364042dbc096ce756b.600x338.jpg" data-full="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/c5fd383488ebcd3116d070364042dbc096ce756b/ss_c5fd383488ebcd3116d070364042dbc096ce756b.1920x1080.jpg" alt="Barzakh Screenshot 11" width="600" height="338" loading="lazy" decoding="async" fetchpriority="low">
+                <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/f9c466d2a9928fa761d43a1d29dc4a2372423cc9/ss_f9c466d2a9928fa761d43a1d29dc4a2372423cc9.600x338.jpg" data-full="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/f9c466d2a9928fa761d43a1d29dc4a2372423cc9/ss_f9c466d2a9928fa761d43a1d29dc4a2372423cc9.1920x1080.jpg" alt="Barzakh Screenshot 12" width="600" height="338" loading="lazy" decoding="async" fetchpriority="low">
+                <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/69e80b5915e22aabd02376717e2d76ce362189e5/ss_69e80b5915e22aabd02376717e2d76ce362189e5.600x338.jpg" data-full="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/69e80b5915e22aabd02376717e2d76ce362189e5/ss_69e80b5915e22aabd02376717e2d76ce362189e5.1920x1080.jpg" alt="Barzakh Screenshot 13" width="600" height="338" loading="lazy" decoding="async" fetchpriority="low">
+                <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/1c65e294a5dd6db7e7cf3d94a93ac1bc3e42e994/ss_1c65e294a5dd6db7e7cf3d94a93ac1bc3e42e994.600x338.jpg" data-full="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/1c65e294a5dd6db7e7cf3d94a93ac1bc3e42e994/ss_1c65e294a5dd6db7e7cf3d94a93ac1bc3e42e994.1920x1080.jpg" alt="Barzakh Screenshot 14" width="600" height="338" loading="lazy" decoding="async" fetchpriority="low">
+                <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/84d7ccac61e94e829cbf9aab7d00a71c84e19be2/ss_84d7ccac61e94e829cbf9aab7d00a71c84e19be2.600x338.jpg" data-full="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3849950/84d7ccac61e94e829cbf9aab7d00a71c84e19be2/ss_84d7ccac61e94e829cbf9aab7d00a71c84e19be2.1920x1080.jpg" alt="Barzakh Screenshot 15" width="600" height="338" loading="lazy" decoding="async" fetchpriority="low">
             </div>
         </section>
 
@@ -409,7 +405,7 @@
                     </div>
                 </div>
                 <div class="footer-col logo-col">
-                    <img src="img/logo/han.svg" alt="Han Logo" class="footer-logo" width="1729" height="451" loading="lazy" decoding="async">
+                    <img src="img/logo/han.svg" alt="Han Logo" class="footer-logo" width="1729" height="451" loading="lazy" decoding="async" fetchpriority="low">
                 </div>
             </div>
             <div class="container-narrow footer-bottom-row">
@@ -429,8 +425,8 @@
         <img class="lightbox-content" id="lightbox-img">
     </div>
 
-    <script src="steam-assets.js?v=1.2" defer></script>
-    <script src="script.js?v=1.3" defer></script>
+    <script src="steam-assets.js?v=1.3" defer></script>
+    <script src="script.js?v=1.5" defer></script>
 </body>
 
 </html>

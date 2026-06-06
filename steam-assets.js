@@ -22,6 +22,11 @@ function isValidSteamUrl(url) {
 }
 
 async function updateSteamAssets() {
+    const isMobileLike = window.matchMedia('(max-width: 768px)').matches ||
+        (navigator.connection && navigator.connection.saveData);
+
+    if (isMobileLike) return;
+
     const APP_ID = '3849950';
     const PROXY_URL = 'fetch_steam.php';
 
